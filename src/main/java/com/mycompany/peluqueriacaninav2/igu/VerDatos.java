@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class VerDatos extends javax.swing.JFrame {
 
-    Controladora control;
+    Controladora control=null;
 
     public VerDatos() {
         control = new Controladora();
@@ -28,7 +28,7 @@ public class VerDatos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tablamasotas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btnCargarDatos = new javax.swing.JToggleButton();
@@ -50,7 +50,7 @@ public class VerDatos extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tablamasotas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -61,7 +61,7 @@ public class VerDatos extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tablamasotas);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,6 +219,7 @@ public class VerDatos extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tablamasotas;
     private javax.swing.JToggleButton btnCargarDatos;
     private javax.swing.JToggleButton btnCargarDatos1;
     private javax.swing.JToggleButton btnCargarDatos2;
@@ -228,7 +229,6 @@ public class VerDatos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     private void cargarTabla() {
@@ -237,6 +237,7 @@ public class VerDatos extends javax.swing.JFrame {
         DefaultTableModel tabla = new DefaultTableModel() {
             // que filas y columnas no sean editables
 
+            @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
 
@@ -260,6 +261,6 @@ public class VerDatos extends javax.swing.JFrame {
 
             }
         }
-
+Tablamasotas.setModel(tabla);
     }
 }

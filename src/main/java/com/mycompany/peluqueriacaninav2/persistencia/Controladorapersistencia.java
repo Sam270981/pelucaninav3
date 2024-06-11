@@ -3,6 +3,7 @@ package com.mycompany.peluqueriacaninav2.persistencia;
 
 import com.mycompany.peluqueriacaninav2.logica.Dueño;
 import com.mycompany.peluqueriacaninav2.logica.Mascota;
+import java.util.List;
 
 
 public class Controladorapersistencia {
@@ -16,5 +17,10 @@ DueñoJpaController DueñoJpa = new DueñoJpaController();
         
         
     }
+
+    public List<Mascota> traermascotas() {
+        return MascotaJpa.findMascotaEntities();
+    }
+    }
    
-}
+

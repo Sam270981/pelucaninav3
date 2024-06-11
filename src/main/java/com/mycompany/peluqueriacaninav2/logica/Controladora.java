@@ -29,8 +29,11 @@ public class Controladora {
         
     }
 
+
     public List<Mascota> traermascotas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     return ControllerPersis.traermascotas();
+    }
+    
     }
    
-}
+
